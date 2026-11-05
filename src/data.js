@@ -34,11 +34,11 @@ export const profile = {
 export const projects = [
   {
     name: 'CYPHER',
-    tagline: 'Computer-vision system for detecting weapons.',
+    tagline: 'AI-powered security surveillance system for IP cameras.',
     description:
-      'An AI object-detection system that spots weapons in images and video, trained on a custom dataset that I collected and labelled myself. Built to help security systems flag threats faster.',
-    tech: ['Python', 'Computer Vision', 'Deep Learning', 'Dataset building'],
-    github: '',
+      'Watches live IP cameras and detects multiple threats in real time: weapons, loitering, abandoned objects, falls and camera tampering. It re-identifies the same person across cameras and shows alerts on a live dashboard. The weapon model is trained on a dataset I collected and labelled myself.',
+    tech: ['Python', 'YOLOv8', 'ByteTrack', 'OSNet Re-ID', 'OpenCV', 'Streamlit'],
+    github: 'https://github.com/ryuma33/CYPHER',
     demo: '',
   },
   {
