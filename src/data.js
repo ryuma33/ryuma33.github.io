@@ -50,13 +50,31 @@ export const projects = [
     github: 'https://github.com/ryuma33/Fire-Fighting-Robot',
     demo: '',
   },
+  {
+    name: 'PARK4U',
+    tagline: 'Find parking with the help of cameras.',
+    description:
+      'Our school-days app idea, rebuilt from the old demo video as an iPhone-style clickable prototype. A map of camera-monitored parking spots, search, turn-by-turn navigation, mock card/UPI payment with a QR receipt, and a parking timer you can extend.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'SVG', 'Python', 'OpenCV'],
+    github: 'https://github.com/ryuma33/park4u',
+    demo: '', // after turning on GitHub Pages: 'https://ryuma33.github.io/park4u/'
+  },
+  {
+    name: 'Password Strength Checker',
+    tagline: 'Rates how strong a password is and explains why.',
+    description:
+      'Checks length, character variety and estimated entropy, catches common passwords (including leetspeak like P@ssw0rd), keyboard walks and repeats, and estimates time-to-crack. Runs fully offline with a command-line and a Streamlit web version, and never stores passwords.',
+    tech: ['Python', 'Streamlit', 'pytest', 'Cybersecurity'],
+    github: 'https://github.com/ryuma33/Password-Strength-Checker',
+    demo: '',
+  },
 ]
 
 export const skills = [
-  { group: 'Languages', items: ['C / C++', 'Python', 'JavaScript'] },
+  { group: 'Languages', items: ['C / C++', 'Python', 'JavaScript', 'HTML & CSS'] },
   { group: 'Embedded & Robotics', items: ['ESP32', 'Arduino', 'Sensors', 'Motor drivers', 'Servos & relays'] },
   { group: 'AI & Vision', items: ['Computer Vision', 'Object detection', 'Dataset collection & labelling', 'Model training'] },
-  { group: 'Tools', items: ['Git & GitHub', 'VS Code', 'Arduino IDE'] },
+  { group: 'Tools', items: ['Git & GitHub', 'VS Code', 'Arduino IDE', 'Streamlit', 'OpenCV'] },
 ]
 
 // Add entries and the "Experience" app appears on the desktop automatically.
