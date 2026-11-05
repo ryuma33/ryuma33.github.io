@@ -36,7 +36,7 @@ export const projects = [
     name: 'CYPHER',
     tagline: 'Computer-vision system for detecting weapons.',
     description:
-      'An object-detection project trained on a custom weapon dataset that I collected and labelled. Edit this text in src/data.js to describe CYPHER in your own words.',
+      'An AI object-detection system that spots weapons in images and video, trained on a custom dataset that I collected and labelled myself. Built to help security systems flag threats faster.',
     tech: ['Python', 'Computer Vision', 'Deep Learning', 'Dataset building'],
     github: '',
     demo: '',
