@@ -33,21 +33,21 @@ export const profile = {
 
 export const projects = [
   {
-    name: 'Fire-Fighting Robot',
-    tagline: 'Autonomous ESP32 robot that finds fires and puts them out.',
-    description:
-      'Three flame sensors track the fire, the robot steers toward it, then a relay-driven pump and a servo-swept nozzle spray water. It re-checks the sensors on every step of the sweep and stops as soon as the fire is out.',
-    tech: ['ESP32', 'Arduino C++', 'Flame sensors', 'L298N', 'Servo', 'Relay'],
-    github: 'https://github.com/ryuma33/Fire-Fighting-Robot',
-    demo: '',
-  },
-  {
     name: 'CYPHER',
     tagline: 'Computer-vision system for detecting weapons.',
     description:
       'An object-detection project trained on a custom weapon dataset that I collected and labelled. Edit this text in src/data.js to describe CYPHER in your own words.',
     tech: ['Python', 'Computer Vision', 'Deep Learning', 'Dataset building'],
     github: '',
+    demo: '',
+  },
+  {
+    name: 'Fire-Fighting Robot',
+    tagline: 'Autonomous ESP32 robot that finds fires and puts them out.',
+    description:
+      'Three flame sensors track the fire, the robot steers toward it, then a relay-driven pump and a servo-swept nozzle spray water. It re-checks the sensors on every step of the sweep and stops as soon as the fire is out.',
+    tech: ['ESP32', 'Arduino C++', 'Flame sensors', 'L298N', 'Servo', 'Relay'],
+    github: 'https://github.com/ryuma33/Fire-Fighting-Robot',
     demo: '',
   },
 ]
