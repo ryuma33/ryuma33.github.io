@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0b0618;
+  --color-panel: #150b2c;
+  --color-panel2: #1e1040;
+  --color-plasma: #b14dff;
+  --color-neon: #ff2bd6;
+  --color-ice: #3ef0ff;
+  --color-ink: #ece6ff;
+  --color-mute: #a99bd0;
+
+  --font-sans: "Chakra Petch", system-ui, sans-serif;
+  --font-display: "Orbitron", "Chakra Petch", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(255 43 214 / 0.4);
+}
+
+/* ---------- Wallpaper ---------- */
+.wallpaper {
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 0%, rgb(177 77 255 / 0.35), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 90% 25%, rgb(255 43 214 / 0.22), transparent 70%),
+    linear-gradient(180deg, #0b0618 0%, #12062a 55%, #1d0838 100%);
+}
+
+.sun {
+  position: absolute;
+  left: 50%;
+  bottom: 42%;
+  width: min(42vw, 420px);
+  aspect-ratio: 1;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff2bd6 0%, #b14dff 60%, transparent 100%);
+  opacity: 0.18;
+  -webkit-mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 20px);
+  mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 20px);
+  clip-path: inset(0 0 50% 0);
+}
+
+/* The wrapper's top edge is the horizon; the grid recedes toward it. */
+.floor-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  overflow: hidden;
+  perspective: 300px;
+  perspective-origin: 50% 0%;
+}
+
+.grid-floor {
+  position: absolute;
+  left: -100%;
+  right: -100%;
+  bottom: 0;
+  height: 300%;
+  background-image:
+    linear-gradient(rgb(255 43 214 / 0.5) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgb(177 77 255 / 0.45) 1.5px, transparent 1.5px);
+  background-size: 56px 56px;
+  transform: rotateX(70deg);
+  transform-origin: 50% 100%;
+  -webkit-mask-image: linear-gradient(to top, #000 15%, transparent 95%);
+  mask-image: linear-gradient(to top, #000 15%, transparent 95%);
+  animation: grid-move 3.5s linear infinite;
+}
+
+.horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 42%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff2bd6, #b14dff, transparent);
+  box-shadow: 0 0 18px 3px rgb(255 43 214 / 0.45);
+}
+
+.scanlines {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(180deg, rgb(255 255 255 / 0.025) 0 1px, transparent 1px 3px);
+}
+
+@keyframes grid-move {
+  to {
+    background-position: 0 56px;
+  }
+}
+
+/* ---------- Text effects ---------- */
+.neon-text {
+  background: linear-gradient(90deg, #ff2bd6, #b14dff 50%, #3ef0ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgb(255 43 214 / 0.35));
+}
+
+.glow-border {
+  box-shadow:
+    0 0 0 1px rgb(177 77 255 / 0.45),
+    0 0 24px rgb(177 77 255 / 0.25),
+    0 20px 60px rgb(0 0 0 / 0.6);
+}
+
+.glow-border-active {
+  box-shadow:
+    0 0 0 1px rgb(255 43 214 / 0.7),
+    0 0 32px rgb(255 43 214 / 0.3),
+    0 24px 70px rgb(0 0 0 / 0.65);
+}
+
+/* ---------- Animations ---------- */
+@keyframes win-open {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.win-open {
+  animation: win-open 0.18s ease-out;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.18s ease-out;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.cursor-blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+/* Scrollbars inside windows */
+.win-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #b14dff55 transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-floor,
+  .win-open,
+  .rise,
+  .cursor-blink {
+    animation: none;
+  }
+}
