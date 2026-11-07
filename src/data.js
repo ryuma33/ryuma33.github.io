@@ -60,6 +60,15 @@ export const projects = [
     demo: '', // after turning on GitHub Pages: 'https://ryuma33.github.io/park4u/'
   },
   {
+    name: 'MyMoney',
+    tagline: 'Personal finance app in a single HTML file.',
+    description:
+      'Tracks spending with search and filters, monthly budgets that warn at 80% and 100%, bills and rent with due-date reminders, roommate splits with settle-up, savings goals and spending insights. Works offline with no install, keeps data on your device, and exports to CSV.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'SVG', 'localStorage'],
+    github: 'https://github.com/ryuma33/MyMoney',
+    demo: '', // once GitHub Pages is live: 'https://ryuma33.github.io/MyMoney/'
+  },
+  {
     name: 'Password Strength Checker',
     tagline: 'Rates how strong a password is and explains why.',
     description:
